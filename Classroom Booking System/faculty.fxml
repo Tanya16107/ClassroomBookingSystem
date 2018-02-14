@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FacultyController">
+   <children>
+      <SplitPane dividerPositions="0.2572383073496659" VBox.vgrow="ALWAYS">
+        <items>
+            <AnchorPane>
+               <children>
+                  <VBox fx:id="homeView" alignment="CENTER" prefHeight="598.0" prefWidth="227.0" spacing="10.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <MaterialDesignIconView fill="#125878" glyphName="ACCOUNT_CIRCLE" opacity="0.83" size="150" text="" />
+                        <Label fx:id="name" alignment="CENTER" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Vishal Singh Rajput B)" textAlignment="CENTER" textFill="#9f9f9f" textOverrun="CLIP" wrapText="false">
+                           <font>
+                              <Font size="18.0" fx:id="x1" />
+                           </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#settings" style="-fx-background-color: white;" text="Settings" VBox.vgrow="ALWAYS">
+                           <graphic>
+                              <MaterialDesignIconView fill="#125878" glyphName="SETTINGS" size="35" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="logoutButton" layoutX="74.0" layoutY="383.0" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: white;" text="Logout">
+                           <graphic>
+                              <MaterialDesignIconView fill="#125878" glyphName="EXIT_TO_APP" size="35" text="" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="settingsView" alignment="CENTER" spacing="40.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label text="New Password" textFill="#00171f">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="newPassword" alignment="CENTER" style="-fx-background-color: white;">
+                           <VBox.margin>
+                              <Insets bottom="-40.0" left="10.0" right="10.0" top="-20.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Line endX="100.0" startX="-100.0">
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </Line>
+                        <Button mnemonicParsing="false" onAction="#changePassword" prefHeight="45.0" prefWidth="161.0" style="-fx-background-color: #125878;" text="Change Password" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets bottom="90.0" top="-5.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#delAccount" style="-fx-background-color: #E50013;" text="Delete Account" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+                           <graphic>
+                              <MaterialDesignIconView fill="WHITE" glyphName="DELETE" size="35" text="" />
+                           </graphic>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#backToHome" style="-fx-background-color: white;">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="ARROW_CIRCLE_LEFT" size="35">
+                                 <fill>
+                                    <LinearGradient endX="1.0" startY="1.0">
+                                       <stops>
+                                          <Stop color="#11ae00" />
+                                          <Stop color="#00ff33" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </FontAwesomeIconView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane style="-fx-background-color: white;">
+               <children>
+                  <TabPane prefHeight="158.0" prefWidth="416.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab closable="false" style="-fx-background-color: white;" text="Check Availability">
+                           <content>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0">
+                                 <children>
+                                    <Label text="Room" textAlignment="CENTER" textFill="#26547c">
+                                       <VBox.margin>
+                                          <Insets bottom="-15.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="roomCheck" prefHeight="27.0" prefWidth="100.0">
+                                       <items>
+                                          <FXCollections fx:factory="observableArrayList">
+                                             <String fx:value="C01" />
+                                             <String fx:value="C02" />
+                                             <String fx:value="C03" />
+                                             <String fx:value="C11" />
+                                             <String fx:value="C12" />
+                                             <String fx:value="C13" />
+                                             <String fx:value="C21" />
+                                             <String fx:value="C22" />
+                                             <String fx:value="C23" />
+                                             <String fx:value="C24" />
+                                             <String fx:value="LR1" />
+                                             <String fx:value="LR2" />
+                                             <String fx:value="LR3" />
+                                             <String fx:value="L21" />
+                                             <String fx:value="L22" />
+                                             <String fx:value="L23" />
+                                             <String fx:value="S01" />
+                                             <String fx:value="S02" />
+
+
+                                          </FXCollections>
+                                       </items>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </ComboBox>
+                                    <Label text="Day" textFill="#26547c">
+                                       <VBox.margin>
+                                          <Insets bottom="-15.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="dateCheck" prefHeight="27.0" prefWidth="178.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </DatePicker>
+                                    <HBox alignment="CENTER" spacing="30.0">
+                                       <children>
+                                          <Label text="From" textFill="#26547c">
+                                             <HBox.margin>
+                                                <Insets right="-15.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="fromCheck" editable="true" prefHeight="27.0" prefWidth="114.0">
+                                             <items>
+                                                <FXCollections fx:factory="observableArrayList">
+                                                   <String fx:value="8:00" />
+                                                   <String fx:value="9:00" />
+                                                   <String fx:value="10:00" />
+                                                   <String fx:value="11:00" />
+                                                   <String fx:value="12:00" />
+                                                   <String fx:value="1:00" />
+                                                   <String fx:value="2:00" />
+                                                   <String fx:value="3:00" />
+                                                   <String fx:value="4:00" />
+                                                   <String fx:value="5:00" />
+                                                   <String fx:value="6:00" />
+                                                   <String fx:value="7:00" />
+                                                </FXCollections>
+                                             </items>
+                                             <HBox.margin>
+                                                <Insets right="15.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                          <Label text="To" textFill="#26547c">
+                                             <HBox.margin>
+                                                <Insets right="-15.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="toCheck" editable="true" prefHeight="27.0" prefWidth="114.0">
+                                             <items>
+                                                <FXCollections fx:factory="observableArrayList">
+                                                   <String fx:value="8:00" />
+                                                   <String fx:value="9:00" />
+                                                   <String fx:value="10:00" />
+                                                   <String fx:value="11:00" />
+                                                   <String fx:value="12:00" />
+                                                   <String fx:value="1:00" />
+                                                   <String fx:value="2:00" />
+                                                   <String fx:value="3:00" />
+                                                   <String fx:value="4:00" />
+                                                   <String fx:value="5:00" />
+                                                   <String fx:value="6:00" />
+                                                   <String fx:value="7:00" />
+                                                </FXCollections>
+                                             </items>
+                                          </ComboBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="35.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <Button mnemonicParsing="false" onAction="#checkAvail" style="-fx-background-color: #26547c;" text="Check" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </content>
+                      </Tab>
+                        <Tab closable="false" style="-fx-background-color: white;" text="Book Room">
+                           <content>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0">
+                                 <children>
+                                    <Label text="Room" textAlignment="CENTER" textFill="#26547c">
+                                       <VBox.margin>
+                                          <Insets bottom="-15.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="roomBook" prefHeight="27.0" prefWidth="100.0">
+                                       <items>
+                                          <FXCollections fx:factory="observableArrayList">
+                                             <String fx:value="C01" />
+                                             <String fx:value="C02" />
+                                             <String fx:value="C03" />
+                                             <String fx:value="C11" />
+                                             <String fx:value="C12" />
+                                             <String fx:value="C13" />
+                                             <String fx:value="C21" />
+                                             <String fx:value="C22" />
+                                             <String fx:value="C23" />
+                                             <String fx:value="C24" />
+                                             <String fx:value="LR1" />
+                                             <String fx:value="LR2" />
+                                             <String fx:value="LR3" />
+                                             <String fx:value="L21" />
+                                             <String fx:value="L22" />
+                                             <String fx:value="L23" />
+                                             <String fx:value="S01" />
+                                             <String fx:value="S02" />
+                                          </FXCollections>
+                                       </items>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </ComboBox>
+                                    <Label text="Day" textFill="#26547c">
+                                       <VBox.margin>
+                                          <Insets bottom="-15.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="dateBook" prefHeight="27.0" prefWidth="178.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </DatePicker>
+                                    <HBox alignment="CENTER" spacing="30.0">
+                                       <children>
+                                          <Label text="From" textFill="#26547c">
+                                             <HBox.margin>
+                                                <Insets right="-15.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="fromBook" editable="true" prefHeight="27.0" prefWidth="114.0">
+                                             <items>
+                                                <FXCollections fx:factory="observableArrayList">
+                                                   <String fx:value="8:00" />
+                                                   <String fx:value="9:00" />
+                                                   <String fx:value="10:00" />
+                                                   <String fx:value="11:00" />
+                                                   <String fx:value="12:00" />
+                                                   <String fx:value="1:00" />
+                                                   <String fx:value="2:00" />
+                                                   <String fx:value="3:00" />
+                                                   <String fx:value="4:00" />
+                                                   <String fx:value="5:00" />
+                                                   <String fx:value="6:00" />
+                                                   <String fx:value="7:00" />
+                                                </FXCollections>
+                                             </items>
+                                             <HBox.margin>
+                                                <Insets right="15.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                          <Label text="To" textFill="#26547c">
+                                             <HBox.margin>
+                                                <Insets right="-15.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="toBook" editable="true" prefHeight="27.0" prefWidth="114.0">
+                                             <items>
+                                                <FXCollections fx:factory="observableArrayList">
+                                                   <String fx:value="8:00" />
+                                                   <String fx:value="9:00" />
+                                                   <String fx:value="10:00" />
+                                                   <String fx:value="11:00" />
+                                                   <String fx:value="12:00" />
+                                                   <String fx:value="1:00" />
+                                                   <String fx:value="2:00" />
+                                                   <String fx:value="3:00" />
+                                                   <String fx:value="4:00" />
+                                                   <String fx:value="5:00" />
+                                                   <String fx:value="6:00" />
+                                                   <String fx:value="7:00" />
+                                                </FXCollections>
+                                             </items>
+                                          </ComboBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="35.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <Button mnemonicParsing="false" onAction="#bookButton" style="-fx-background-color: #26547c;" text="Book" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </Tab>
+                        <Tab closable="false" style="-fx-background-color: white;" text="My Bookings">
+                           <content>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                                 <children>
+                                    <ListView fx:id="bookingsTable" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: white;" VBox.vgrow="ALWAYS" />
+                                    <Button mnemonicParsing="false" onAction="#cancelBookingAction" style="-fx-background-color: white;" text="Cancel Booking" textFill="RED" textOverrun="CLIP">
+                                       <graphic>
+                                          <MaterialDesignIconView fill="RED" glyphName="CLOSE" size="20" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Button>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </Tab>
+                        <Tab closable="false" style="-fx-background-color: white;" text="My Courses">
+                           <content>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <ListView fx:id="myCoursesTable" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: white;" VBox.vgrow="ALWAYS" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </Tab>
+                        <Tab closable="false" style="-fx-background-color: white;" text="Calendar">
+                           <content>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="40.0">
+                                 <children>
+                                    <ComboBox fx:id="roomCal" onAction="#loadRoom" prefHeight="27.0" prefWidth="100.0" promptText="C01" style="-fx-background-color: white; -fx-border-color: #f46036;">
+                                       <items>
+                                          <FXCollections fx:factory="observableArrayList">
+                                             <String fx:value="C01" />
+                                             <String fx:value="C02" />
+                                             <String fx:value="C03" />
+                                             <String fx:value="C11" />
+                                             <String fx:value="C12" />
+                                             <String fx:value="C13" />
+                                             <String fx:value="C21" />
+                                             <String fx:value="C22" />
+                                             <String fx:value="C23" />
+                                             <String fx:value="C24" />
+                                             <String fx:value="LR1" />
+                                             <String fx:value="LR2" />
+                                             <String fx:value="LR3" />
+                                             <String fx:value="L21" />
+                                             <String fx:value="L22" />
+                                             <String fx:value="L23" />
+                                             <String fx:value="S01" />
+                                             <String fx:value="S02" />
+                                          </FXCollections>
+                                       </items>
+                                       <VBox.margin>
+                                          <Insets top="-20.0" />
+                                       </VBox.margin>
+                                    </ComboBox>
+                                    <HBox alignment="CENTER" spacing="40.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#prevWeek" style="-fx-background-color: white;">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#f46036" glyphName="ANGLE_DOUBLE_LEFT" size="25" />
+                                             </graphic>
+                                          </Button>
+                                          <Label text="Week" textFill="#26547c">
+                                             <HBox.margin>
+                                                <Insets right="-10.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="weekNo" text="1" textFill="#26547c">
+                                             <HBox.margin>
+                                                <Insets left="-10.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Button mnemonicParsing="false" onAction="#nextWeek" style="-fx-background-color: white;">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#f46036" glyphName="ANGLE_DOUBLE_RIGHT" size="25" />
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <Label fx:id="date" text="Label" textFill="#26547c">
+                                       <VBox.margin>
+                                          <Insets bottom="-10.0" top="-25.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="221.0" prefWidth="633.0" scaleShape="false">
+                                       <children>
+                                          <TableView fx:id="CalDay" layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="221.0" prefWidth="70.0" scaleShape="false" style="-fx-border-color: white;" HBox.hgrow="NEVER">
+                                             <placeholder>
+                                                <Label text="" />
+                                             </placeholder>
+                                             <columns>
+                                                <TableColumn fx:id="cday" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="Day" />
+                                             </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                             <padding>
+                                                <Insets right="-2.0" />
+                                             </padding>
+                                          </TableView>
+                                          <TableView fx:id="calendar" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="221.0" prefWidth="495.0" style="-fx-border-color: white;" HBox.hgrow="ALWAYS">
+                                             <placeholder>
+                                                <Label text="" />
+                                             </placeholder>
+                                             <columns>
+                                                <TableColumn fx:id="cal1" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="8:00" />
+                                                <TableColumn fx:id="cal2" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="8:30" />
+                                                <TableColumn fx:id="cal3" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="9:00" />
+                                                <TableColumn fx:id="cal4" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="9:30" />
+                                                <TableColumn fx:id="cal5" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="10:00" />
+                                                <TableColumn fx:id="cal6" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="10:30" />
+                                                <TableColumn fx:id="cal7" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="11:00" />
+                                                <TableColumn fx:id="cal8" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="11:30" />
+                                                <TableColumn fx:id="cal9" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="12:00" />
+                                                <TableColumn fx:id="cal10" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="12:30" />
+                                                <TableColumn fx:id="cal11" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="1:00" />
+                                                <TableColumn fx:id="cal12" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="1:30" />
+                                                <TableColumn fx:id="cal13" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="2:00" />
+                                                <TableColumn fx:id="cal14" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="2:30" />
+                                                <TableColumn fx:id="cal15" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="3:00" />
+                                                <TableColumn fx:id="cal16" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="3:30" />
+                                                <TableColumn fx:id="cal17" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="4:00" />
+                                                <TableColumn fx:id="cal18" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="4:30" />
+                                                <TableColumn fx:id="cal19" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="5:00" />
+                                                <TableColumn fx:id="cal20" editable="false" prefWidth="70.0" resizable="false" sortable="false" text="5:30" />
+                                             </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                             <padding>
+                                                <Insets left="-2.0" />
+                                             </padding>
+                                          </TableView>
+                                       </children>
+                                    </HBox>
+                                    
+              
+            
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</VBox>
