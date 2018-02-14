@@ -14,4 +14,12 @@ java Login
 
 ![Screenshot](3.png)
 
+## Problems Faced
+* The serialized objects, once stored in the files, the changes made elsewhere weren’t reflected when the file was read. We had to change our approach to handle this issue.
+* Having made a menu driven program first, we faced many issues while integrating the GUI with the backend. Filling TableView and ListView required ObservableLists which  changed the base classes a lot. We often found ourselves switching between ListView and TableView for displaying data.
+* Displaying TimeTable and the Calendar view was particularly troublesome. We had expected that there would have been some functionality to add data directly to cells. On searching, we found that data had to be filled Column-wise. 
 
+## Additional Features
+* The View Calendar functionality which provides the schedule for a room for each week of the semester.
+* This is useful when a User(Faculty/Admin/Student) checks for the availability of a room but finds that it’s unavailable.
+* In such a situation, rather than randomly checking for different time/day/room he/she can easily open up the schedule of a room and book it accordingly. 
