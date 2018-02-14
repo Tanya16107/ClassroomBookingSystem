@@ -8,7 +8,9 @@ javac *.java
 java Login
 ```
 ## Screenshots
-(./1.png?raw=true "Title")
-(./2.png?raw=true "Title")
-(./3.png?raw=true "Title")
+![Screenshot](1.png)
+
+![Screenshot](2.png)
+
+![Screenshot](3.png)
 
